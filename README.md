@@ -39,7 +39,7 @@ Histórias do Cliente:
    2. Criar API de avaliação **[Bruno]**
 5. Cliente quer consultar os serviços pendentes
    1. Criar tela de serviços pendentes **[Keller]**
-   2.  Criar API de serviços pendentes**[João]**
+   2.  Criar API de serviços pendentes **[João]**
 
 Histórias do Fornecedor
 1. Fornecedor cadastrar seus dados no app
