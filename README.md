@@ -31,9 +31,9 @@ Histórias do Cliente:
 2. Cliente quer buscar um serviço no app
    1. Criar tela de busca **[Keller]**
    2. Criar API de busca **[João]**
-3. Cliente quer contratar um serviço no app 
-   4. Criar tela de contratação **[Keller]**
-   5. Cria API de contratação **[Bruno]**
+3. Cliente quer contratar um serviço no app
+   1. Criar tela de contratação **[Keller]**
+   2. Cria API de contratação **[Bruno]**
 4. Cliente quer avaliar um fornecedor
    1. Criar tela de avaliação **[Marco]**
    2. Criar API de avaliação **[Bruno]**
