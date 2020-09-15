@@ -16,17 +16,17 @@ export default function Cadastro(props) {
                     <TextField required className="form-field" label="E-mail" variant="outlined" margin="normal"/>
                 </div>
                 <div>
-                    <TextField required className="form-field" label="Telefone" variant="outlined" margin="normal"/>
+                    <TextField required className="form-field" label="Telefone" variant="outlined" margin="normal" type="number"/>
                 </div>
                 <div>
                     <TextField required className="form-field" label="Endereço" variant="outlined" margin="normal"/>
                 </div>
-                <div className="form-field-container double-field">
-                    <TextField required style={{marginRight: 15}}label="Cidade" variant="outlined" margin="normal"/>
-                    <TextField required label="Bairro" variant="outlined" margin="normal"/>
+                <div className="form-field-container double-field-container">
+                    <TextField required className="double-field" style={{marginRight: 15}}label="Cidade" variant="outlined" margin="normal"/>
+                    <TextField required className="double-field" label="Bairro" variant="outlined" margin="normal"/>
                 </div>
                 <div>
-                    <Button className="submit-button" variant="outlined" onClick={() => props.setPage('Logo')}>Registrar</Button>
+                    <Button className="submit-button" variant="outlined" type="submit"/* onClick={() => props.setPage('Logo')} */>Registrar</Button>
                 </div>
             </form>
         </div>

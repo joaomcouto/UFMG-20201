@@ -1,4 +1,5 @@
 .form-container {
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,8 +12,12 @@
     width: 90vw;
 }
 
-#form-cadastro .double-field {
+#form-cadastro .double-field-container {
     display: flex;
+}
+
+#form-cadastro .double-field {
+    flex: 1;
 }
 
 #form-cadastro .submit-button {
