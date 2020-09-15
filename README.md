@@ -14,7 +14,7 @@ Servi é uma plataforma web para a contratação e oferecimento de serviços. Po
 A ferramenta contará com uma interface intuitiva e sofisticada que visa proporcionar uma facilidade na navegação para ambos os lados da operação. A ideia principal é que o cliente possa solicitar serviços de maneira rápida e prática enquanto profissionais ganham mais um meio de comunicação para explorar o mercado e potencialmente encontrar novos clientes.
 
 ## Tecnologias
-1. **Frontend**: Vue.js / JavaScript
+1. **Frontend**: React / JavaScript
 1. **Backend**: Python + Flask
 1. **DB**: MongoDB
 
