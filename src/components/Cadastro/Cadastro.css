@@ -1,0 +1,23 @@
+.form-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-cadastro .form-field-container,
+#form-cadastro .form-field {
+    width: 90vw;
+}
+
+#form-cadastro .double-field {
+    display: flex;
+}
+
+#form-cadastro .submit-button {
+    margin-top: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
