@@ -1,19 +1,16 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import './App.css';
+import Logo from './components/Logo.js'
 
 function App() {
 
-  const [page, setPage] = React.useState("");
+  const [page, setPage] = React.useState("Logo");
 
-  return (
-    <div className="App">
-      <h1>It's Servi</h1>
-      <p>...but it does nothing yet.</p>
-      {/* <input val=""></input> */}
-      <Button variant="contained" onClick={() => setPage('Arroz')}>Submit</Button>
-    </div>
-  );
+  switch (page){
+    case 'Logo':
+      return (<Logo />);
+  }
+
 }
 
 export default App;

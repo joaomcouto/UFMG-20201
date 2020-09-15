@@ -1,11 +1,4 @@
-.App {
-  text-align: center;
-  height: 100vh;
-  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
-  font-family: 'Comfortaa';
-}
-
 h1 {
-  padding-top: 45vh;
+  padding-top: 40vh;
   margin: 0;
 }
