@@ -8,7 +8,7 @@ import {Link} from "react-router-dom"
 export default function Login(){
 
     return (
-        <div className="form-container">
+        <div className="form-login-container">
             <h1>Servi</h1>
             <form id="form-login">
                 <div>
@@ -22,7 +22,7 @@ export default function Login(){
                 </div>
             </form>
             <div id="register-div">
-                <p>Ainda não tem uma conta?</p>
+                <p>Ainda não possui uma conta?</p>
                 <Button component={Link} to="/register" variant="outlined" >Registrar</Button>
             </div>
         </div>

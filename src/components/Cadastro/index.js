@@ -7,14 +7,18 @@ import {Link} from "react-router-dom"
 export default function Cadastro(props) {
 
     return (
-        <div className="form-container">
+        <div className="form-cadastro-container">
             <h1>Servi</h1>
+            <p className="description">Preencha o formulário abaixo para se cadastrar</p>
             <form id="form-cadastro">
                 <div>
                     <TextField required className="form-field" label="Nome" variant="outlined" margin="normal"/>
                 </div>
                 <div>
                     <TextField required className="form-field" label="E-mail" variant="outlined" margin="normal"/>
+                </div>
+                <div>
+                    <TextField required className="form-field" label="Senha" type="password" variant="outlined" margin="normal"/>
                 </div>
                 <div>
                     <TextField required className="form-field" label="Telefone" variant="outlined" margin="normal" type="number"/>
@@ -31,7 +35,7 @@ export default function Cadastro(props) {
                 </div>
             </form>
             <div id="login-div">
-                <p>Já tem uma conta?</p>
+                <p>Já possui uma conta?</p>
                 <Button component={Link} to="/login" variant="outlined" >Login</Button>
             </div>
         </div>
