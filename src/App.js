@@ -5,20 +5,19 @@ import Login from "./components/Login"
 import Logo from './components/Logo'
 import Cadastro from './components/Cadastro'
 
-import { history } from './_helpers';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 function App() {
 
   return  (
-    <Router history={history}>
+    <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Logo} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Cadastro} />
         <Redirect from="*" to="/"/>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 
 
