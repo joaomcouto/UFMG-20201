@@ -1,6 +1,7 @@
 import React from 'react'
 import './Logo.css';
 import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom"
 
 export default function Logo(props) {
 
@@ -9,8 +10,8 @@ export default function Logo(props) {
             <h1>It's Servi</h1>
             <p>...but it does nothing yet.</p>
             <div>
-                <Button variant="outlined" style={{marginRight: '10px'}}>Entrar</Button>
-                <Button variant="outlined" onClick={() => props.setPage('Cadastro')}>Registrar</Button>
+                <Button component={Link} to="/login"  variant="outlined" style={{marginRight: '10px'}}>Entrar</Button>
+                <Button component={Link} to="/register" variant="outlined" >Registrar</Button>
             </div>
         </div>
     )

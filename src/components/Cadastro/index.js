@@ -2,6 +2,7 @@ import React from 'react'
 import './Cadastro.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom"
 
 export default function Cadastro(props) {
 
@@ -29,6 +30,10 @@ export default function Cadastro(props) {
                     <Button className="submit-button" variant="outlined" type="submit"/* onClick={() => props.setPage('Logo')} */>Registrar</Button>
                 </div>
             </form>
+            <div id="login-div">
+                <p>Já tem uma conta?</p>
+                <Button component={Link} to="/login" variant="outlined" >Login</Button>
+            </div>
         </div>
     )
 }
