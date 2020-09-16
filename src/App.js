@@ -3,6 +3,8 @@ import './App.css';
 import Logo from './components/Logo/Logo.js'
 import Cadastro from './components/Cadastro/Cadastro.js'
 
+// import { Router, Route, Switch, Redirect } from 'react-router-dom';
+
 function App() {
 
   const [page, setPage] = React.useState("Logo");
