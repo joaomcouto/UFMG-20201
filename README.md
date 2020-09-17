@@ -45,7 +45,7 @@ Histórias do Fornecedor
    1. Cadastrar informações básicas **[Marco]**
    2. Criar tela de cadastro de informações básicas **[Cadar]**
 2. Fornecedor quer adicionar um serviço no app
-   1. Criar tela para adicionar um novo serviço **[Keller]**
+   1. Criar tela para adicionar um novo serviço **[--]**
    2. Criar API para adicionar um novo serviço **[Bruno]**
 3. Fornecedor quer consultar os serviços pendentes
    1. Criar tela de consulta de serviços **[--]**
