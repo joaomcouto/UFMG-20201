@@ -38,3 +38,6 @@ backend/dist/
 backend/build/
 *.egg-info/
 backend/.env
+
+.vscode
+.idea/
