@@ -1,0 +1,15 @@
+.busca-container {
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.busca-container .search-bar {
+    width: 90vw;
+}
+
+.busca-container .section-name {
+    text-align: center;
+}
