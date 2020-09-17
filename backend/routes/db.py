@@ -1,6 +1,3 @@
-import sys
-sys.path.append("..") 
-
 from flask import Blueprint
 from modules.db import get_db, init_db
 
