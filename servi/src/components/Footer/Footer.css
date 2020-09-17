@@ -1,0 +1,23 @@
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    background: #5D9FFF;
+    top: 90vh;
+    display: flex;
+    -webkit-box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
+}
+
+.footer .footer-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .footer-div p {
+    margin: 0;
+}
