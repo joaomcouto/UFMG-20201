@@ -16,4 +16,4 @@ def init_db():
         env["DB_USER"],
         env["DB_PASS"]
     ))
-    print("Connected Mongo!")
+    print("Connected to Mongo!")
