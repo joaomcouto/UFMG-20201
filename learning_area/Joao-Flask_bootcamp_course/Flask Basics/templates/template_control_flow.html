@@ -1,0 +1,19 @@
+{%extends "base.html" %}
+
+{%block content%}
+
+
+<ul>
+  {% for item in mylist %}
+  <li>{{item}}</li>
+  {% endfor %}
+</ul>
+
+{% if 1 in mylist %}
+<p>tem 1 na lista</p>
+{% else %}
+<p>Nao tem 1 na lista</p>
+{% endif%}
+
+
+{%endblock %}

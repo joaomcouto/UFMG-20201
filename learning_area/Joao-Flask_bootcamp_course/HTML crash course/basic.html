@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Titulo da aba</title>
+  </head>
+  <body>
+    <h1>Header size 1</h1>
+    <h2>Header size 2</h2>
+    <p><strong>Negrito dentro de um pagrafo</strong></p>
+    <p><em>Italico dentro de um pagrafo novo</em></p>
+    <p>Só um pagrafo</p>
+    <ol>
+      <li>Uma lista </li>
+      <li>Ordenada </li>
+    </ol>
+
+    <ul>
+      <li>Uma lista</li>
+      <li>de bullets<li>
+    </ul>
+
+    <ol>
+      <li>Uma lista</li>
+      <ul>
+        <li>Uma lista dentro dessa lista</li>
+      </ul>
+    </ol>
+    Uma imagem local
+    <img src="seattle.jpeg" alt=""> <!-- Uma imagem local-->
+    Uma imagem da web <img src="https://images.unsplash.com/photo-1523665307251-7f4e0e7b23fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="">
+    <p>Um link <a href="https://google.com">Um link</a></p>
+    <p>Um link para outro html local <a href="outro.html">Um link para um html local do servidor</a></p>
+
+    <p>Uma imagem como link</p>
+    <a href="http://flask.pocoo.org">
+      <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/flask-logo.png" width="320" height="240">
+    </a>
+
+
+    <form>
+    <h2>Uma form de input com tipo email senha e botao submit</h2>
+    <input type="email" name="useremail" value="Email Here">
+    <input type="password" name="password" value="Password">
+    <input type="submit" >
+
+    <h2>Uma form de cor</h2>
+    <input type="color" >
+    <h2>Uma form de texto</h2>
+    <input type="text" name="" value="Text goes here">
+    </form>
+
+    <form>
+    <h2>Uma form que tem um id e label associado </h2>
+    <label for="email1"> ENTRE O EMAIL: </label>
+    <input id="email1" type="email" name="" value="">
+    </form>
+
+    <h2>Uma form com submit que toma uma action</h2>
+    <form action="outro.html" method="get">
+    <label for="email1"> ENTRE O EMAIL: </label>
+    <input id="email1" type="email" name="useremail" value="Email Here">
+    <input type="submit" >
+    </form>
+
+    <h2>Uma form, com action, com placeholders, que te joga pro google com form na url</h2>
+    <h4>Por hora as duplas name:value estão sendo mandadas para a proxima html mas no flask sera possivel retorna-los pro servidor</h4>
+    <form action="https://google.com" method="get">
+    <label for="email1"> ENTRE O EMAIL: </label>
+    <input id="email1" type="email" name="useremail" placeholder="Seu email aqui (placeholder)">
+    <input type="submit" >
+    </form>
+
+    <form action="https://google.com" method="get">
+    <h2>Uma form multipla escolha ()</h2>
+    Observe que voce só recebe uma unica opcao pq os dois inputs tem o mesmo nome
+    Isso significa que o que será passado para a form action é o "name" e o "value" da selecionada
+    <label for="yes">Yes</label>
+    <input type="radio" id="yes" name="dog_choice" value="yesss">
+
+    <label for="no">No:</label>
+    <input type="radio" id="no" name= "dog_choice" value="no">
+    <input type="submit" >
+    </form>
+
+    <form>
+    <h2>Um form de dropdown</h2>
+    <select name="stars">
+      <option value="Great">3</option>
+      <option value="Okay">2</option>
+      <option value="Bad">1</option>
+    </select>
+    </form>
+
+    <h2>Um form de comentario textual</h2>
+    <p>Any other comments?</p>
+    <textarea name="name" rows="4" cols="80"></textarea>
+    <!-- <input type="submit" name="" value="Submit Feedback">-->
+
+  </body>
+</html>

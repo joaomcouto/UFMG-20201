@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{%extends "base.html" %}
+
+
+{%block content%}
+
+<h1>Hello {{my_variable}}</h1>
+{{letters}}
+<hr>
+
+
+#Exemplo de filter, sammy estava com letra minuscula no dic
+<br>
+{{dic['pup_name'] | capitalize }}
+
+{%endblock%}
