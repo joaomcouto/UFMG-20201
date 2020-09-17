@@ -1,20 +1,20 @@
 import React from 'react'
-import './SearchCard.css';
+import './ServiceCard.css';
 
 import { Card, CardHeader, Avatar } from '@material-ui/core';
 
-export default function SearchCard() {
+export default function ServiceCard(props) {
     return (
-        <div className="search-card">
+        <div className="service-card">
             <Card variant="outlined">
                 <CardHeader
                     avatar={
                         <Avatar>
-                            S
+                            <img src={props.image} alt="S"></img>
                         </Avatar>
                     }
-                    title="Nome do Estabelecimento"
-                    subheader="Nota ?"
+                    title={props.name}
+                    subheader={'Nota ' + props.nota}
                 />
             </Card>
         </div>
