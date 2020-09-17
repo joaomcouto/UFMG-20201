@@ -20,20 +20,6 @@ function App() {
     </BrowserRouter>
   );
 
-
-
-  // const [page, setPage] = React.useState("Logo");
-  
-  
-  // switch (page){
-  //   case 'Logo':
-  //     return (<Logo setPage={setPage}/>);
-  //   case 'Cadastro':
-  //     return (<Cadastro setPage={setPage}/>);
-  //   default:
-  //     return;
-  // }
-
 }
 
 export default App;
