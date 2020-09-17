@@ -6,8 +6,16 @@
     align-items: center;
 }
 
-.busca-container .search-bar {
+.busca-container .search-bar-container {
+    display: flex;
     width: 90vw;
+    margin-top: 5vw;
+}
+
+
+.busca-container .search-bar {
+    flex: 1;
+    margin-right: 15px;
 }
 
 .busca-container .section-name {

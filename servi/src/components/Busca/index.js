@@ -8,8 +8,9 @@ import {Link} from "react-router-dom"
 export default function Busca() {
     return (
         <div className="busca-container">
-            <section>
-                <TextField className="search-bar" placeholder="Buscar" variant="outlined" margin="normal"/>
+            <section className="search-bar-container">
+                <TextField className="search-bar" placeholder="Serviço" variant="outlined"/>
+                <Button  variant="outlined">Buscar</Button>
             </section>
             <section>
                 <p className="section-name" >Categorias</p>
