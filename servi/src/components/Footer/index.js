@@ -12,7 +12,7 @@ export default function Footer() {
             </div>
             <div className="footer-div">
                 <LibraryBooksOutlined fontSize="Large"/>
-                <p>Pendentes</p>
+                <p>Pedidos</p>
             </div>
             <div className="footer-div">
                 <AccountCircleOutlined fontSize="Large"/>
