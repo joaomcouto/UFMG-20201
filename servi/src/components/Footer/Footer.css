@@ -1,8 +1,8 @@
 .footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 10vh;
-    background: #6BBBFF;
+    background: white;
     top: 90vh;
     display: flex;
     -webkit-box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
@@ -16,6 +16,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .footer .footer-div p {
