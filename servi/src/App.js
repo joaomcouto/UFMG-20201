@@ -9,7 +9,6 @@ import Busca from './components/Busca'
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 function App() {
-
   return  (
     <BrowserRouter>
       <Switch>

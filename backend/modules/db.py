@@ -11,7 +11,7 @@ def get_db():
     global client
     return client[env["DB_NAME"]]
 
-def init_db(check_collections=False):
+def init_db(check_collections=True):
     global client
     client = pymongo.MongoClient("mongodb+srv://{}:{}@servi-db.glfop.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority".format(
         env["DB_USER"],
@@ -34,24 +34,20 @@ def ensureUserModel(db):
     db["users"].create_index("nome")
     db["users"].create_index("email", unique=True)
     db["users"].create_index("senha")
-    db["users"].create_index("cpf", unique=True)
+    # db["users"].create_index("cpf", unique=True)
     db["users"].create_index("telefone")
     db["users"].create_index("endereco")
     db["users"].create_index("cidade")
     db["users"].create_index("bairro")
 
-    user1 = userModel("Cadar", "felipecadarchamone@gmail.com", "PASSWORD",
-             "11122233344", "32323434","minha rua ap e numero","minha cidade","meu bairro")
 
-    # db["users"].insert_one(user1)
-
-def userModel(nome, email, senha, cpf, telefone, endereco, cidade, bairro):
+def userModel(nome, email, senha, telefone, endereco, cidade, bairro):
     senha = hash_password(senha)
     return {
         "nome":nome, 
         "email":email, 
         "senha":senha, 
-        "cpf":cpf, 
+        # "cpf":cpf, 
         "telefone":telefone, 
         "endereco":endereco, 
         "cidade":cidade, 
