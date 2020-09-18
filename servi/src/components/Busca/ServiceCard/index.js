@@ -2,8 +2,10 @@ import React from 'react'
 import './ServiceCard.css';
 
 import { Card, CardHeader, Avatar } from '@material-ui/core';
+import { StarRateRounded } from '@material-ui/icons';
 
 export default function ServiceCard(props) {
+
     return (
         <div className="service-card">
             <Card variant="outlined">
@@ -14,7 +16,7 @@ export default function ServiceCard(props) {
                         </Avatar>
                     }
                     title={props.name}
-                    subheader={'Nota ' + props.nota}
+                    subheader={<div className="subheader"><StarRateRounded /> {props.nota + ' | ' + props.categoria}</div>}
                 />
             </Card>
         </div>

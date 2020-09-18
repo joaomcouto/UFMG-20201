@@ -50,10 +50,11 @@ export default function Busca() {
         } else {
             return (services.map(service => (
                         <ServiceCard
-                            id={service.recipe.label}
+                            key={service.recipe.label}
                             name={service.recipe.label}
-                            nota={service.recipe.totalWeight}
+                            nota={service.recipe.yield}
                             image={service.recipe.image}
+                            categoria={service.recipe.healthLabels[0]}
                         />
                     )))
         }
