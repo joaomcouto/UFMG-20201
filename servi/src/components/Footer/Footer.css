@@ -16,6 +16,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .footer .footer-div p {
