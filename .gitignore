@@ -39,4 +39,6 @@ backend/build/
 *.egg-info/
 backend/.env
 
-learning_area/Joao-Flask_bootcamp_course/Flask-Bootcamp-master/
+.vscode
+.idea/
+learning_area/

@@ -54,6 +54,30 @@ def userModel(nome, email, senha, telefone, endereco, cidade, bairro):
         "bairro":bairro,
     }
 
+def ensureServiceModel(db):
+    collections = db.collection_names()
+    if "services" not in collections:
+        db.create_collection("services")
+
+    db["services"].create_index("nome")
+    db["services"].create_index("categoria")
+    db["services"].create_index("nota")
+    db["services"].create_index("endereco")
+    db["services"].create_index("descricao")
+    db["services"].create_index("finalizado")
+    db["services"].create_index("imagem")
+
+
+def serviceModel(nome, categoria, nota, endereco, descricao, finalizado, imagem):
+    return {
+        "nome":nome,
+        "categoria":categoria,
+        "nota":nota,
+        "endereco":endereco,
+        "descricao":descricao,
+        "finalizado":finalizado,
+        "imagem":imagem
+    }
 
 
 if __name__ == "__main__":
