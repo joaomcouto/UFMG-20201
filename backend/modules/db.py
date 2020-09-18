@@ -1,4 +1,4 @@
-from utils import hash_password, verify_password
+from modules.utils import hash_password
 import pymongo
 import dotenv
 
