@@ -13,11 +13,12 @@ def get_db():
 
 def init_db(check_collections=True):
     global client
-    client = pymongo.MongoClient("mongodb+srv://{}:{}@servi-db.glfop.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority".format(
-        env["DB_USER"],
-        env["DB_PASS"]
-    ))
-    print("Connected to Mongo!")
+    if client == None:
+        client = pymongo.MongoClient("mongodb+srv://{}:{}@servi-db.glfop.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority".format(
+            env["DB_USER"],
+            env["DB_PASS"]
+        ))
+        print("Connected to Mongo!")
 
     # Check colections
     if check_collections:
