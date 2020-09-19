@@ -42,5 +42,9 @@ app.register_blueprint(services_module, url_prefix="/services")
 from routes.categories import categories_module
 app.register_blueprint(categories_module, url_prefix="/categories")
 
+from routes.orders import orders_module
+app.register_blueprint(orders_module, url_prefix="/orders")
+
+
 from routes.db import db_module
 app.register_blueprint(db_module, url_prefix="/db")
