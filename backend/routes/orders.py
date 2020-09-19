@@ -1,13 +1,13 @@
+import json
 import logging
 
+from bson import json_util
 from flask import Blueprint
 from modules.db import get_db
 
-from backend.modules.utils import JSONEncoder
 
 orders_module = Blueprint("orders_module", __name__)
 db = get_db()
-
 
 #@orders_module.route("/user_id/<id_do_user>", methods=['GET'])
 #def getOrder(id_do_user):
@@ -26,7 +26,8 @@ def getOrders():
         json_results = []
         for result in results:
             json_results.append(result)
-        return JSONEncoder().encode(json_results)
+        return json.dumps(json_results, default=json_util.default)
+
 
     except Exception as err:
         logging.error(err)
