@@ -16,15 +16,17 @@ env = dotenv.dotenv_values()
 app = Flask(__name__)
 app.config['JWT_ACCESS_COOKIE_PATH'] = env["JWT_ACCESS_COOKIE_PATH"]
 app.config['JWT_REFRESH_COOKIE_PATH'] = env["JWT_REFRESH_COOKIE_PATH"]
-app.config['JWT_TOKEN_LOCATION'] = env["JWT_TOKEN_LOCATION"]
+app.config['JWT_TOKEN_LOCATION'] = ['cookies']
+app.config['SESSION_COOKIE_SAMESITE'] = None
 
 # Set the secret key to sign the JWTs with
 app.config['JWT_SECRET_KEY'] = env['JWT_SECRET_KEY']  # Change this!
+app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 
 jwt = JWTManager(app)
 
 
-CORS(app)
+CORS(app, supports_credentials=True)
 init_db()
 
 @app.route('/')

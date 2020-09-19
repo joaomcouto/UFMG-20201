@@ -35,6 +35,7 @@ export default function Login(){
             history.push("/search")
         })
         .catch(err => {
+            console.log(err)
             const error_data = err.response.data;
             console.log(error_data)
             dispatch(authCreators.login_fail(error_data))

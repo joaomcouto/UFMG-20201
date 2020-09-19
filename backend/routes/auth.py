@@ -60,7 +60,7 @@ def login():
     user = db["users"].find_one({"email":email})
     if user:
         if verify_password(user["senha"], password):
-
+            print("Login OK")
             # Create the tokens we will be sending back to the user
             access_token = create_access_token(identity=email)
             refresh_token = create_refresh_token(identity=email)
@@ -90,9 +90,30 @@ def refresh():
     current_user = get_jwt_identity()
     access_token = create_access_token(identity=current_user)
 
+    # Prepare return user
+    user = db["users"].find_one({"email":current_user})
+    user["_id"] = str(user["_id"])
+    del user["senha"]
+    resp = jsonify(user)
+
     # Set the JWT access cookie in the response
-    resp = jsonify({'refresh': True})
     set_access_cookies(resp, access_token)
+    return resp, 200
+    
+# Same thing as login here, except we are only setting a new cookie
+# for the access token.
+@auth_module.route('/confirm', methods=['POST'])
+@jwt_required
+def confirm():
+    # Create the new access token
+    current_user = get_jwt_identity()
+
+    # Prepare return user
+    user = db["users"].find_one({"email":current_user})
+    user["_id"] = str(user["_id"])
+    del user["senha"]
+    resp = jsonify(user)
+
     return resp, 200
 
 @auth_module.route('/logout', methods=['POST'])

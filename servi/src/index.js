@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+axios.defaults.withCredentials = true;
 
 ReactDOM.render(
   <React.StrictMode>
