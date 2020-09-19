@@ -4,6 +4,7 @@ from flask import Blueprint
 from modules.db import get_db
 
 from backend.modules.utils import JSONEncoder
+import bson
 
 services_module = Blueprint("services_module", __name__)
 db = get_db()
@@ -25,7 +26,13 @@ def getServices():
 @services_module.route("/<nome_do_servico>", methods=['GET'])
 def getService(nome_do_servico):
     try:
-        result = db["services"].find_one({'nome':nome_do_servico})
+        #Exact matching -> old
+        #result = db["services"].find_one({'nome':nome_do_servico})
+
+
+        regx = bson.regex.Regex(nome_do_servico)
+        result = db["services"].find_one({'nome' : regx })
         return JSONEncoder().encode(result)
+
     except Exception as err:
         logging.error(err)
