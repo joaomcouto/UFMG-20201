@@ -28,7 +28,7 @@ function App() {
                 const error_data = err.response.data;
                 dispatch(authCreators.login_fail(error_data))
             })
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 

@@ -30,6 +30,7 @@ export default function Busca() {
         if (Object.keys(search).length !== 0) {
             getServices();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search]);
 
     function checkCategories() {

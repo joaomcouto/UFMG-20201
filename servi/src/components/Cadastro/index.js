@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef} from 'react'
 import './Cadastro.css';
 
 import {TextField, Button } from '@material-ui/core';
