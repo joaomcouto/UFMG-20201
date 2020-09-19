@@ -3,8 +3,9 @@ from flask import jsonify
 from modules.db import get_db
 from modules.db import userModel
 from modules.utils import verify_password
+
 from flask_jwt_extended import (
-    JWTManager, jwt_required, create_access_token,
+    jwt_required, create_access_token,
     jwt_refresh_token_required, create_refresh_token,
     get_jwt_identity, set_access_cookies,
     set_refresh_cookies, unset_jwt_cookies

@@ -43,9 +43,10 @@ def ensureUserModel(db):
     db["users"].create_index("endereco")
     db["users"].create_index("cidade")
     db["users"].create_index("bairro")
+    db["users"].create_index("contratante")
 
 
-def userModel(nome, email, senha, telefone, endereco, cidade, bairro):
+def userModel(nome, email, senha, telefone, endereco, cidade, bairro, contratante):
     senha = hash_password(senha)
     return {
         "nome":nome, 
@@ -56,6 +57,7 @@ def userModel(nome, email, senha, telefone, endereco, cidade, bairro):
         "endereco":endereco, 
         "cidade":cidade, 
         "bairro":bairro,
+        "contratante":contratante
     }
 
 def ensureServiceModel(db):
@@ -120,7 +122,3 @@ def categoryModel(nome, nota):
         "nome":nome,
         "nota":nota,
     }
-
-
-if __name__ == "__main__":
-    init_db(check_collections=True)
