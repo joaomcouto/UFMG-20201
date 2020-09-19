@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './Cadastro.css';
 
-import {TextField, Button } from '@material-ui/core';
+import {TextField, Button, Select, MenuItem } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 
 import {Link} from "react-router-dom"
@@ -12,6 +12,8 @@ import {Creators as authCreators} from "../../store/ducks/auth";
 import { useHistory } from "react-router-dom";
 
 export default function Cadastro(props) {
+
+    const [contratante_value, setContratante_value] = React.useState('');
 
     const history =  useHistory()
     const dispatch = useDispatch()
@@ -24,6 +26,7 @@ export default function Cadastro(props) {
     const endereco = useRef()
     const cidade = useRef()
     const bairro = useRef()
+    const contratante = useRef()
 
 
     const onSubmit = (e) => {
@@ -38,6 +41,7 @@ export default function Cadastro(props) {
             endereco:endereco.current.value,
             cidade:cidade.current.value,
             bairro:bairro.current.value,
+            contratante:contratante.current.value,
         }
         
         userServices.register(form_data)
@@ -51,7 +55,11 @@ export default function Cadastro(props) {
             dispatch(authCreators.register_fail(error_data))
         })
 
-      };
+    };
+
+    const handleChange = (event) => {
+        setContratante_value(event.target.value);
+    };
 
     return (
         <div className="form-cadastro-container">
@@ -79,6 +87,13 @@ export default function Cadastro(props) {
                 <div className="form-field-container double-field-container">
                     <TextField  inputRef={cidade} required className="double-field" style={{marginRight: 15}}label="Cidade" variant="outlined" margin="normal"/>
                     <TextField  inputRef={bairro} required className="double-field" label="Bairro" variant="outlined" margin="normal"/>
+                </div>
+                <div className="select-field-container">
+                    <p>Você pretende utilizar o aplciativo como:</p>
+                    <Select inputRef={contratante} required className="form-field" variant="outlined" value={contratante_value} onChange={handleChange}>
+                        <MenuItem value={0}>Contratado</MenuItem>
+                        <MenuItem value={1}>Contratante</MenuItem>
+                    </Select>
                 </div>
                 <div>
                     <Button className="submit-button" variant="outlined" type="submit">Registrar</Button>
