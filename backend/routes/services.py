@@ -1,10 +1,19 @@
 import logging
 
-from bson import json_util
 from flask import Blueprint
 from modules.db import get_db
 
+
 import json
+from bson import ObjectId
+
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
 
 services_module = Blueprint("services_module", __name__)
 db = get_db()
@@ -17,7 +26,8 @@ def getServices():
         json_results = []
         for result in results:
             json_results.append(result)
-        return json.dumps(json_results, default=json_util.default)
+        return JSONEncoder().encode(json_results)
+
     except Exception as err:
         logging.error(err)
 
@@ -26,6 +36,6 @@ def getServices():
 def getService(nome_do_servico):
     try:
         result = db["services"].find_one({'nome':nome_do_servico})
-        return json.dumps(result, default=json_util.default)
+        return JSONEncoder().encode(result)
     except Exception as err:
         logging.error(err)
