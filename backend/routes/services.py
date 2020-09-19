@@ -29,9 +29,13 @@ def getService(nome_do_servico):
         #Exact matching -> old
         #result = db["services"].find_one({'nome':nome_do_servico})
 
+        #Initial attempt
+        #regx = bson.regex.Regex(nome_do_servico)
+        #result = db["services"].find_one({'nome' : regx })
+        #return JSONEncoder().encode(result)
 
-        regx = bson.regex.Regex(nome_do_servico)
-        result = db["services"].find_one({'nome' : regx })
+        #Javascript method
+        result = db["services"].find_one({'nome':{'$regex':nome_do_servico }})
         return JSONEncoder().encode(result)
 
     except Exception as err:
