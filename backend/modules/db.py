@@ -80,5 +80,43 @@ def serviceModel(nome, categoria, nota, endereco, descricao, finalizado, imagem)
     }
 
 
+def ensureOrderModel(db):
+    collections = db.collection_names()
+    if "orders" not in collections:
+        db.create_collection("orders")
+
+    db["orders"].create_index("user_id")
+    db["orders"].create_index("service_id")
+    db["orders"].create_index("data_inicio")
+    db["orders"].create_index("data_fim")
+    db["orders"].create_index("finalizado")
+
+
+def orderModel(user_id, service_id, data_inicio, data_fim, finalizado):
+    return {
+        "user_id":user_id,
+        "service_id":service_id,
+        "data_inicio":data_inicio,
+        "data_fim":data_fim,
+        "finalizado":finalizado,
+    }
+
+
+def ensureCategoryModel(db):
+    collections = db.collection_names()
+    if "categories" not in collections:
+        db.create_collection("categories")
+
+    db["categories"].create_index("nome")
+    db["categories"].create_index("nota")
+
+
+def categoryModel(nome, nota):
+    return {
+        "nome":nome,
+        "nota":nota,
+    }
+
+
 if __name__ == "__main__":
     init_db(check_collections=True)

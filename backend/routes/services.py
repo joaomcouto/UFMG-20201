@@ -11,12 +11,13 @@ db = get_db()
 
 
 @services_module.route("/", methods=['GET'])
-def get_services():
+def getServices():
     try:
         services = list(db["services"].find())
         return json.dumps(services, default=json_util.default)
     except Exception as err:
         logging.error(err)
+
 
 @services_module.route("/<nome_do_servico>", methods=['GET'])
 def getService(nome_do_servico):
