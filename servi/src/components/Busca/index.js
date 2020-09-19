@@ -23,7 +23,6 @@ export default function Busca() {
         const response = await fetch (url);
         const data = await response.json();
         setServices(data.hits);
-        console.log(data);
     }
 
     React.useEffect( () => {

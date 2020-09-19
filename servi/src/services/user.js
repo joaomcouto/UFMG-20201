@@ -5,7 +5,24 @@ export const userServices = {
     login,
     confirm,
     logout,
+    //getCategories,
 };
+
+/* function getCategories(){
+    return axios.post("")
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+} */
 
 function logout(){
     return axios.post("/auth/logout")
