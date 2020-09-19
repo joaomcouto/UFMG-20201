@@ -10,7 +10,7 @@ export default function CategoryCard(props) {
                 <CardHeader
                     avatar={
                         <Avatar>
-                            {props.image ? props.image : props.name[0]}
+                            {props.imagem ? <img src={props.imagem} alt="S"></img> : props.name[0]}
                         </Avatar>
                     }
                     title={props.name}

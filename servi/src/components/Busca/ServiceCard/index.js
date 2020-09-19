@@ -12,7 +12,7 @@ export default function ServiceCard(props) {
                 <CardHeader
                     avatar={
                         <Avatar>
-                            <img src={props.image} alt="S"></img>
+                            {props.imagem ? <img src={props.imagem} alt="S"></img> : props.name[0]}
                         </Avatar>
                     }
                     title={props.name}

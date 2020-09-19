@@ -6,7 +6,41 @@ export const userServices = {
     confirm,
     logout,
     getCategories,
+    getServices,
+    getServicesByName,
 };
+
+function getServicesByName(name){
+    return axios.get("/services/" + name)
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
+
+function getServices(){
+    return axios.get("/services/")
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
 
 function getCategories(){
     return axios.get("/categories/")

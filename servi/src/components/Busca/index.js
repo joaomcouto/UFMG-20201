@@ -17,16 +17,31 @@ export default function Busca() {
     const [services, setServices] = React.useState([]);
     const [search, setSearch] = React.useState("");
 
+    const getCategoryName = /* async */ (category_id) => {
+        /* const data = await userServices.getCategories();
+        const i = 0;
+        while(i <= data.length){
+            if(data[i]._id == category_id){
+                return (data[i].nome)
+            }
+        }
+        return (""); */
+        return ('Categoria');
+    }
+
     const getServices = async () => {
-        /* const response = await fetch (url);
-        const data = await response.json();
-        setServices(data.hits); */
+        const data = await userServices.getServicesByName(search);
+        setServices(data);
+    }
+
+    const getDefaultServices = async () => {
+        const data = await userServices.getServices();
+        setServices(data);
     }
 
     const getCategories = async () => {
         const data = await userServices.getCategories();
         setCategories(data);
-        console.log(data);
     }
 
     React.useEffect( () => {
@@ -36,6 +51,8 @@ export default function Busca() {
     React.useEffect( () => {
         if (Object.keys(search).length !== 0) {
             getServices();
+        } else {
+            getDefaultServices();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search]);
@@ -50,7 +67,7 @@ export default function Busca() {
                                 key={category._id}
                                 name={category.nome}
                                 nota={category.nota}
-                                img={category.image}
+                                imagem={category.imagem}
                             />
                         ))}
                     </Carousel>)
@@ -61,15 +78,18 @@ export default function Busca() {
         if (Object.keys(services).length === 0) {
             return (<p>Nenhum Serviço por aqui =(</p>)
         } else {
-            return (services.map(service => (
-                        <ServiceCard
-                            key={service.recipe.label}
-                            name={service.recipe.label}
-                            nota={service.recipe.yield}
-                            image={service.recipe.image}
-                            categoria={service.recipe.healthLabels[0]}
-                        />
-                    )))
+            return (<>
+                        {services.map(service => (
+                            <ServiceCard
+                                key={service._id}
+                                name={service.nome}
+                                nota={service.nota}
+                                imagem={service.imagem}
+                                categoria={service.categoria}
+                            />
+                        ))}
+                    </>
+                    )
         }
     }
 
