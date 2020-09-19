@@ -38,13 +38,16 @@ def register():
         access_token = create_access_token(identity=email)
         refresh_token = create_refresh_token(identity=email)
 
+        # Prepare return user
+        user["_id"] = str(user["_id"])
+        del user["senha"]
+        resp = jsonify(user)
+        
         # Set the JWT cookies in the response
-        resp = jsonify({'login': True})
         set_access_cookies(resp, access_token)
         set_refresh_cookies(resp, refresh_token)
 
-
-        return jsonify({"code":0}), 200
+        return resp, 200
     except Exception as err:
         return jsonify({"code":1, "errmsg":err.args[0]}), 400
         pass
@@ -55,19 +58,28 @@ def login():
     password = request.json.get('senha', None)
 
     user = db["users"].find_one({"email":email})
-    if verify_password(user["senha"], password):
+    if user:
+        if verify_password(user["senha"], password):
 
-        # Create the tokens we will be sending back to the user
-        access_token = create_access_token(identity=email)
-        refresh_token = create_refresh_token(identity=email)
+            # Create the tokens we will be sending back to the user
+            access_token = create_access_token(identity=email)
+            refresh_token = create_refresh_token(identity=email)
 
-        # Set the JWT cookies in the response
-        resp = jsonify({'login': True})
-        set_access_cookies(resp, access_token)
-        set_refresh_cookies(resp, refresh_token)
-        return resp, 200
-    else:
-        return "a", 401
+            # Prepare return user
+            user["_id"] = str(user["_id"])
+            del user["senha"]
+            resp = jsonify(user)
+            
+            # Set the JWT cookies in the response
+            set_access_cookies(resp, access_token)
+            set_refresh_cookies(resp, refresh_token)
+
+            return resp, 200
+    details = {
+        "errmsg":"Fail to authenticate",
+        "code":401,
+    }
+    return jsonify(details), 401
 
 # Same thing as login here, except we are only setting a new cookie
 # for the access token.

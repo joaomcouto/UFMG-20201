@@ -7,7 +7,15 @@ import Alert from '@material-ui/lab/Alert';
 import {Link} from "react-router-dom"
 import {userServices} from "../../services"
 
+import {useDispatch, useSelector} from "react-redux"
+import {Creators as authCreators} from "../../store/ducks/auth";
+import { useHistory } from "react-router-dom";
+
 export default function Cadastro(props) {
+
+    const history =  useHistory()
+    const dispatch = useDispatch()
+    const auth_state = useSelector(state => state.auth)
 
     const nome = useRef()
     const email = useRef()
@@ -17,13 +25,11 @@ export default function Cadastro(props) {
     const cidade = useRef()
     const bairro = useRef()
 
-    const [register_error, setRegister_error] = useState(false)
-    const [register_message, setRegister_message] = useState("")
 
     const onSubmit = (e) => {
         e.preventDefault();
-        setRegister_error(false);
 
+        dispatch(authCreators.register_request())
         const form_data = {
             nome:nome.current.value,
             email:email.current.value,
@@ -37,11 +43,12 @@ export default function Cadastro(props) {
         userServices.register(form_data)
         .then(r => {
             console.log(r)
+            dispatch(authCreators.register_success(r))
+            history.push("/search")
         })
         .catch(err => {
             const error_data = err.response.data;
-            setRegister_message(error_data.errmsg);
-            setRegister_error(true)
+            dispatch(authCreators.register_fail(error_data))
         })
 
       };
@@ -50,8 +57,8 @@ export default function Cadastro(props) {
         <div className="form-cadastro-container">
             <h1>Servi</h1>
             <p className="description">Preencha o formulário abaixo para se cadastrar</p>
-            {register_error && 
-                <Alert severity="error"> {register_message} </Alert> 
+            {auth_state.error && 
+                <Alert severity="error"> {auth_state.error} </Alert> 
             }
             <form id="form-cadastro" onSubmit={onSubmit}>
                 <div>
