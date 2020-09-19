@@ -1,7 +1,10 @@
 import logging
 
-from flask import Blueprint
+from flask import Blueprint, request
 from modules.db import get_db
+
+from bson.objectid import ObjectId
+
 
 from backend.modules.utils import JSONEncoder
 import bson
@@ -13,11 +16,16 @@ db = get_db()
 @services_module.route("/", methods=['GET'])
 def getServices():
     try:
-        results = db["services"].find()
-        json_results = []
-        for result in results:
-            json_results.append(result)
-        return JSONEncoder().encode(json_results)
+        serviceId = request.args.get('id')
+        if serviceId is None:
+            results = db["services"].find()
+            json_results = []
+            for result in results:
+                json_results.append(result)
+            return JSONEncoder().encode(json_results)
+        else:
+            result = db["services"].find_one({'_id': ObjectId(serviceId)})
+            return JSONEncoder().encode(result)
 
     except Exception as err:
         logging.error(err)
