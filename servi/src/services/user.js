@@ -5,11 +5,11 @@ export const userServices = {
     login,
     confirm,
     logout,
-    //getCategories,
+    getCategories,
 };
 
-/* function getCategories(){
-    return axios.post("")
+function getCategories(){
+    return axios.get("/categories/")
     .then(response => {
         if (response.status === 200){
             return response.data
@@ -22,7 +22,7 @@ export const userServices = {
     .catch(error => {
         throw error
     })
-} */
+}
 
 function logout(){
     return axios.post("/auth/logout")

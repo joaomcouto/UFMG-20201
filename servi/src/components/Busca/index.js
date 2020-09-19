@@ -6,6 +6,8 @@ import Footer from '../Footer'
 import ServiceCard from './ServiceCard'
 import CategoryCard from './CategoryCard'
 
+import {userServices} from "../../services/"
+
 import { TextField, Button } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel'
 
@@ -15,15 +17,21 @@ export default function Busca() {
     const [services, setServices] = React.useState([]);
     const [search, setSearch] = React.useState("");
 
-    let id = 'eae40dfa';
-    let key = '743456b82f0470fdf3f998613bd1354b';
-    let url = `https://api.edamam.com/search?q=${search}&app_id=${id}&app_key=${key}`;
-
     const getServices = async () => {
-        const response = await fetch (url);
+        /* const response = await fetch (url);
         const data = await response.json();
-        setServices(data.hits);
+        setServices(data.hits); */
     }
+
+    const getCategories = async () => {
+        const data = await userServices.getCategories();
+        setCategories(data);
+        console.log(data);
+    }
+
+    React.useEffect( () => {
+        getCategories();
+    }, []);
 
     React.useEffect( () => {
         if (Object.keys(search).length !== 0) {
@@ -38,7 +46,12 @@ export default function Busca() {
         } else {
             return (<Carousel>
                         {categories.map(category => (
-                            <CategoryCard />
+                            <CategoryCard 
+                                key={category._id}
+                                name={category.nome}
+                                nota={category.nota}
+                                img={category.image}
+                            />
                         ))}
                     </Carousel>)
         }
