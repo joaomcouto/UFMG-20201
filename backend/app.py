@@ -34,5 +34,11 @@ def hello_world():
 from routes.auth import auth_module
 app.register_blueprint(auth_module, url_prefix="/auth")
 
+from routes.services import services_module
+app.register_blueprint(services_module, url_prefix="/services")
+
+from routes.categories import categories_module
+app.register_blueprint(categories_module, url_prefix="/categories")
+
 from routes.db import db_module
 app.register_blueprint(db_module, url_prefix="/db")
