@@ -1,0 +1,38 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container .avatar {
+    margin: 8vh;
+    width: 100px;
+    height: 100px;
+    background-color: deepskyblue;
+    border: 1px solid gray;
+}
+
+.profile-container .profile-card {
+    width: 90vw;
+    margin-bottom: 2vh;
+}
+
+.profile-container .profile-card h4 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 0px;
+    margin-top: 2vh;
+}
+
+.profile-container .profile-card p {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 0px;
+    margin-bottom: 2vh;
+    font-size: 80%;
+}
+
+.profile-container .logout-button {
+    margin-top: 5vh;
+}

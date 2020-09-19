@@ -6,6 +6,7 @@ import Login from "./components/Login"
 import Cadastro from './components/Cadastro'
 import Busca from './components/Busca'
 import Pedidos from './components/Pedidos'
+import Perfil from './components/Perfil'
 import PrivateRoute from "./components/PrivateRoute"
 import PublicRoute from "./components/PublicRoute"
 import { Switch, Redirect, BrowserRouter } from 'react-router-dom';
@@ -42,6 +43,7 @@ function App() {
                 <PublicRoute authed={auth_state} path="/register" component={Cadastro} />
                 <PrivateRoute authed={auth_state} path="/search" component={Busca} />
                 <PrivateRoute authed={auth_state} path="/orders" component={Pedidos} />
+                <PrivateRoute authed={auth_state} path="/profile" component={Perfil} />
                 <Redirect from="*" to="/" />
             </Switch>
         </BrowserRouter>

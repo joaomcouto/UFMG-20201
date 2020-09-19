@@ -18,12 +18,9 @@ export default function Footer() {
                 <LibraryBooksOutlined fontSize="large"/>
                 <p>Pedidos</p>
             </Box>
-            <Box className="footer-div">
+            <Box className="footer-div" component={Link} to="/profile">
                 <AccountCircleOutlined fontSize="large"/>
                 <p>Perfil</p>
-            </Box>
-            <Box className="footer-div" component={Button} onClick={() => {userServices.logout()}} >
-                <p>Logout</p>
             </Box>
         </div>
     )
