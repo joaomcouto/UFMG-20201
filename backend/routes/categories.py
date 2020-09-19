@@ -2,17 +2,7 @@ import logging
 
 from flask import Blueprint
 from modules.db import get_db
-
-
-import json
-from bson import ObjectId
-
-
-class JSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, ObjectId):
-            return str(o)
-        return json.JSONEncoder.default(self, o)
+from backend.modules.utils import JSONEncoder
 
 
 categories_module = Blueprint("categories_module", __name__)
