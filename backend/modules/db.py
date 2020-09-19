@@ -23,6 +23,9 @@ def init_db(check_collections=True):
     if check_collections:
         db = get_db()
         ensureUserModel(db)
+        ensureServiceModel(db)
+        ensureOrderModel(db)
+        ensureCategoryModel(db)
 
 ####################### Models ##################
 

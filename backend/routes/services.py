@@ -13,8 +13,11 @@ db = get_db()
 @services_module.route("/", methods=['GET'])
 def getServices():
     try:
-        services = list(db["services"].find())
-        return json.dumps(services, default=json_util.default)
+        results = db["services"].find()
+        json_results = []
+        for result in results:
+            json_results.append(result)
+        return json.dumps(json_results, default=json_util.default)
     except Exception as err:
         logging.error(err)
 
