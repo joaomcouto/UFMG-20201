@@ -8,7 +8,58 @@ export const userServices = {
     getCategories,
     getServices,
     getServicesByName,
+    getServiceById,
+    orders,
+    ordersById,
 };
+
+function ordersById(id){
+    return axios.get("/orders/?user_id=" + id)
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
+
+function orders(){
+    return axios.get("/orders/")
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
+
+function getServiceById(id){
+    return axios.get("/services/?id=" + id)
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
 
 function getServicesByName(name){
     return axios.get("/services/" + name)

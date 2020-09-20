@@ -1,10 +1,22 @@
 import React from 'react'
 import './OrderCard.css';
 
-import { Card, CardHeader, Avatar } from '@material-ui/core';
-import { StarRateRounded } from '@material-ui/icons';
+import { Card, CardHeader, Avatar } from '@material-ui/core'
+
+import {userServices} from "../../../services/"
 
 export default function OrderCard(props) {
+
+    const [service, setService] = React.useState([]);
+
+    const getService = async () => {
+        const data = await userServices.getServiceById(props.service);
+        setService(data);
+    }
+
+    React.useEffect( () => {
+        getService();
+    }, []);
 
     return (
         <div className="order-card">
@@ -12,11 +24,15 @@ export default function OrderCard(props) {
                 <CardHeader
                     avatar={
                         <Avatar>
-                            <img src={props.image} alt="S"></img>
+                            {/* <img src={props.image} alt="S"></img> */}
                         </Avatar>
                     }
-                    title={props.name}
-                    subheader={<div className="subheader"><StarRateRounded /> {props.nota + ' | ' + props.categoria}</div>}
+                    title={service.nome}
+                    subheader={<div>
+                        {service.categoria} | {props.data_inicio}
+                        <br></br>
+                        {props.finalizado ? "Finalizado" : "Em Andamento"}
+                    </div>}
                 />
             </Card>
         </div>

@@ -17,18 +17,6 @@ export default function Busca() {
     const [services, setServices] = React.useState([]);
     const [search, setSearch] = React.useState("");
 
-    const getCategoryName = /* async */ (category_id) => {
-        /* const data = await userServices.getCategories();
-        const i = 0;
-        while(i <= data.length){
-            if(data[i]._id == category_id){
-                return (data[i].nome)
-            }
-        }
-        return (""); */
-        return ('Categoria');
-    }
-
     const getServices = async () => {
         const data = await userServices.getServicesByName(search);
         setServices(data);
@@ -78,8 +66,7 @@ export default function Busca() {
         if (Object.keys(services).length === 0) {
             return (<p>Nenhum Serviço por aqui =(</p>)
         } else {
-            return (<>
-                        {services.map(service => (
+            return (services.map(service => (
                             <ServiceCard
                                 key={service._id}
                                 name={service.nome}
@@ -87,8 +74,7 @@ export default function Busca() {
                                 imagem={service.imagem}
                                 categoria={service.categoria}
                             />
-                        ))}
-                    </>
+                        ))
                     )
         }
     }
