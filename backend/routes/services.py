@@ -21,6 +21,7 @@ def getServices():
             results = db["services"].find()
             json_results = []
             for result in results:
+                result['categoria'] = db["categories"].find_one({'_id': ObjectId(result['categoria'])})['nome']
                 json_results.append(result)
             return JSONEncoder().encode(json_results)
         else:
@@ -42,6 +43,8 @@ def getService(nome_do_servico):
         #Initial attempt -> avoid double compilation
         regx = bson.regex.Regex(nome_do_servico)
         result = db["services"].find_one({'nome' : regx })
+        if (result != None):
+            result['categoria'] = db["categories"].find_one({'_id': ObjectId(result['categoria'])})['nome']
         return JSONEncoder().encode(result)
 
         #Javascript method
