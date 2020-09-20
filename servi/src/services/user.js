@@ -21,7 +21,7 @@ function hireService(user_id, service_id){
         user_id,
         service_id,
         data_inicio: Date.now(),
-        data_fim: null,
+        data_fim: Date.now(),
         finalizado:false,
     }
 
