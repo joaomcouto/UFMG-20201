@@ -16,6 +16,15 @@ db = get_db()
 @services_module.route("/", methods=['GET'])
 def getServices():
     try:
+        categoryId = request.args.get("category_id")
+        if categoryId is not None:
+            results = db["services"].find({'categoria': ObjectId(categoryId)})
+            json_results = []
+            for result in results:
+                result['categoria'] = db["categories"].find_one({'_id': ObjectId(result['categoria'])})['nome']
+                json_results.append(result)
+            return JSONEncoder().encode(json_results)
+
         serviceId = request.args.get('id')
         if serviceId is None:
             results = db["services"].find()
