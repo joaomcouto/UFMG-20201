@@ -42,11 +42,9 @@ def register():
     order_data["data_inicio"] = dt.datetime.utcfromtimestamp(int(order_data["data_inicio"] / 1000))
     try:
         order = orderModel(**order_data)
-        print(order)
         try:
             db["orders"].insert_one(order)
         except Exception as err:
-            print(err)
             details = err._OperationFailure__details
             details["errmsg"] = list(details["keyValue"].keys())[0] + " já está em uso"
             return jsonify(details), 400
