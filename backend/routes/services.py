@@ -24,7 +24,9 @@ def getServices():
                 json_results.append(result)
             return JSONEncoder().encode(json_results)
         else:
+
             result = db["services"].find_one({'_id': ObjectId(serviceId)})
+            result['categoria'] = db["categories"].find_one({'_id': ObjectId(result['categoria'])})['nome']
             return JSONEncoder().encode(result)
 
     except Exception as err:
