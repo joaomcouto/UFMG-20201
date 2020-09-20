@@ -4,6 +4,7 @@ import './OrderCard.css';
 import { Card, CardHeader, Avatar } from '@material-ui/core'
 
 import {userServices} from "../../../services/"
+import { LocationOn } from '@material-ui/icons';
 
 export default function OrderCard(props) {
 
@@ -24,12 +25,12 @@ export default function OrderCard(props) {
                 <CardHeader
                     avatar={
                         <Avatar>
-                            {/* <img src={props.image} alt="S"></img> */}
+                            <LocationOn />
                         </Avatar>
                     }
                     title={service.nome}
                     subheader={<div>
-                        {service.categoria} | {props.data_inicio}
+                        {service.categoria} | {(new Date(props.data_inicio)).toLocaleDateString("pt-BR")}
                         <br></br>
                         {props.finalizado ? "Finalizado" : "Em Andamento"}
                     </div>}
