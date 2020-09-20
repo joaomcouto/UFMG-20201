@@ -9,6 +9,7 @@ export const userServices = {
     getServices,
     getServicesByName,
     getServiceById,
+    getServicesByCat,
     orders,
     ordersById,
 };
@@ -31,6 +32,22 @@ function ordersById(id){
 
 function orders(){
     return axios.get("/orders/")
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
+
+function getServicesByCat(cat){
+    return axios.get("/services/?category_id=" + cat)
     .then(response => {
         if (response.status === 200){
             return response.data

@@ -8,7 +8,7 @@ import CategoryCard from './CategoryCard'
 
 import {userServices} from "../../services/"
 
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Box } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel'
 
 export default function Busca() {
@@ -16,6 +16,11 @@ export default function Busca() {
     const [categories, setCategories] = React.useState([]);
     const [services, setServices] = React.useState([]);
     const [search, setSearch] = React.useState("");
+
+    const getServicesByCat = async (cat) => {
+        const data = await userServices.getServicesByCat(cat);
+        setServices(data);
+    }
 
     const getServices = async () => {
         const data = await userServices.getServicesByName(search);
@@ -51,12 +56,14 @@ export default function Busca() {
         } else {
             return (<Carousel>
                         {categories.map(category => (
-                            <CategoryCard 
-                                key={category._id}
-                                name={category.nome}
-                                nota={category.nota}
-                                imagem={category.imagem}
-                            />
+                            <Box key={category._id} onClick={() => getServicesByCat(category._id)}>
+                                <CategoryCard 
+                                    key={category._id}
+                                    name={category.nome}
+                                    nota={category.nota}
+                                    imagem={category.imagem}
+                                />
+                            </Box>
                         ))}
                     </Carousel>)
         }
