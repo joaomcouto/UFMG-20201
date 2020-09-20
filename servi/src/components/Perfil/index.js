@@ -18,7 +18,7 @@ export default function Perfil() {
 
     return (
         <div className="profile-container">
-            <Avatar className="avatar">{userInfo.nome[0]}</Avatar>
+            <Avatar className="avatar" src={`https://api.adorable.io/avatars/200/${userInfo.email}.png`}>{userInfo.nome[0]}</Avatar>
 
             <Card variant="outlined" className="profile-card profile-name">
                 <h4>{userInfo.nome}</h4>
