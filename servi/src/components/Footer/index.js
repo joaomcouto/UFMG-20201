@@ -1,10 +1,9 @@
 import React from 'react'
 import './Footer.css';
 
-import {Box, Button } from '@material-ui/core';
+import {Box} from '@material-ui/core';
 
 import { AccountCircleOutlined, SearchRounded, LibraryBooksOutlined } from '@material-ui/icons';
-import {userServices} from "../../services/"
 import {Link} from "react-router-dom"
 
 export default function Footer() {

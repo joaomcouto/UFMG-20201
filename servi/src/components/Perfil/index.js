@@ -3,10 +3,9 @@ import './Perfil.css';
 
 import Footer from '../Footer'
 import { userServices } from "../../services/"
-import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-import { Box, Button, Avatar, Card } from '@material-ui/core';
+import { Button, Avatar, Card } from '@material-ui/core';
 
 export default function Perfil() {
 
