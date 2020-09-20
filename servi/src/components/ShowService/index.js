@@ -53,9 +53,7 @@ export default function ShowService(props) {
                 ? <Button className="contratar-button" color="primary">Contratado !</Button>
                 : <Button className="contratar-button" onClick={() => { handleHire(userInfo._id, id) }} variant="outlined">Contratar</Button>
             }
-            {hired &&
-                <Button style={{marginTop:"0px"}} className="contratar-button" onClick={() => { history.goBack() }} variant="outlined">Voltar</Button>
-            }
+            <Button style={{marginTop:"0px"}} className="contratar-button" onClick={() => { history.goBack() }} variant="outlined">Voltar</Button>
 
             <Footer />
         </div>
