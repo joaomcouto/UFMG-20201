@@ -19,7 +19,7 @@ export default function Perfil() {
 
     return (
         <div className="profile-container">
-            <Avatar className="avatar">A</Avatar>
+            <Avatar className="avatar">{userInfo.nome[0]}</Avatar>
 
             <Card variant="outlined" className="profile-card profile-name">
                 <h4>{userInfo.nome}</h4>

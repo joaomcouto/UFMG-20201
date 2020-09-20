@@ -9,8 +9,8 @@
     margin: 8vh;
     width: 100px;
     height: 100px;
-    background-color: deepskyblue;
-    border: 1px solid gray;
+    background-color: #8fd5ff;
+    border: 1px solid lightgray;
 }
 
 .profile-container .profile-card {
