@@ -12,7 +12,33 @@ export const userServices = {
     getServicesByCat,
     orders,
     ordersById,
+    hireService,
 };
+
+function hireService(user_id, service_id){
+
+    const data = {
+        user_id,
+        service_id,
+        data_inicio: Date.now(),
+        data_fim: null,
+        finalizado:false,
+    }
+
+    return axios.post("/orders/register", data)
+    .then(response => {
+        if (response.status === 200){
+            return response.data
+        }else{
+            console.log("Register Service Fail")
+            console.log(response.data)
+            throw response.data
+        }
+    })
+    .catch(error => {
+        throw error
+    })
+}
 
 function ordersById(id){
     return axios.get("/orders/?user_id=" + id)
