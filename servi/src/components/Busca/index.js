@@ -75,7 +75,8 @@ export default function Busca() {
             return (<p>Nenhum Serviço por aqui =(</p>)
         } else {
             return (services.map(service => (
-                        <Box className="card-link" key={service._id} component={Link} to={"show_service/" + service._id}>
+                        <Box className="card-link" key={service._id} component={Link}
+                            to={"show_service/" + service._id}>
                             <ServiceCard
                                 key={service._id}
                                 name={service.nome}

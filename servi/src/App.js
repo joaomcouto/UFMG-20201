@@ -45,7 +45,7 @@ function App() {
                 <PrivateRoute authed={auth_state} path="/search" component={Busca} />
                 <PrivateRoute authed={auth_state} path="/orders" component={Pedidos} />
                 <PrivateRoute authed={auth_state} path="/profile" component={Perfil} />
-                <PrivateRoute authed={auth_state} path="/show_service" component={ShowService} />
+                <PrivateRoute authed={auth_state} path="/show_service/:id" component={ShowService} />
                 <Redirect from="*" to="/" />
             </Switch>
         </BrowserRouter>
