@@ -6,6 +6,11 @@
     align-items: center;
 }
 
+.busca-container .card-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .busca-container .search-bar-container {
     display: flex;
     width: 90vw;

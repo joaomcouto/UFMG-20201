@@ -7,6 +7,7 @@ import ServiceCard from './ServiceCard'
 import CategoryCard from './CategoryCard'
 
 import {userServices} from "../../services/"
+import {Link} from "react-router-dom"
 
 import { TextField, Button, Box } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel'
@@ -74,6 +75,7 @@ export default function Busca() {
             return (<p>Nenhum Serviço por aqui =(</p>)
         } else {
             return (services.map(service => (
+                        <Box className="card-link" key={service._id} component={Link} to={"show_service/" + service._id}>
                             <ServiceCard
                                 key={service._id}
                                 name={service.nome}
@@ -81,8 +83,8 @@ export default function Busca() {
                                 imagem={service.imagem}
                                 categoria={service.categoria}
                             />
-                        ))
-                    )
+                        </Box>
+                    )))
         }
     }
 
