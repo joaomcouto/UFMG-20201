@@ -38,5 +38,10 @@
 
 .show-service-container .contratar-button {
     margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+
+.show-service-container .back-button {
+    margin-top: 5vh;
     margin-bottom: 12vh;
 }
