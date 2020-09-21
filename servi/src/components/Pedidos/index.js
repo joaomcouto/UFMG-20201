@@ -19,7 +19,7 @@ export default function Pedidos() {
     }
 
     React.useEffect( () => {
-        getOrders();
+        getOrders(); // eslint-disable-next-line
     }, []);
 
     function checkOrders() {

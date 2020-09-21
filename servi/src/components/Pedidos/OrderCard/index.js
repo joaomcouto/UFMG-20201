@@ -16,7 +16,7 @@ export default function OrderCard(props) {
     }
 
     React.useEffect( () => {
-        getService();
+        getService(); // eslint-disable-next-line
     }, []);
 
     return (

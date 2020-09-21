@@ -20,11 +20,11 @@ export default function ShowService(props) {
 
     const getService = async () => {
         const data = await userServices.getServiceById(id);
-        setService(data);
+        setService(data); 
     }
 
     React.useEffect(() => {
-        getService();
+        getService(); // eslint-disable-next-line
     }, []);
 
     const handleHire = (user_id, service_id) => {
