@@ -1,7 +1,7 @@
 package money;
 
 class Franc extends Money {
-    public Franc(int amount) {
+    Franc(int amount) {
         this.amount = amount;
     }
     Money times(int multiplier) {
