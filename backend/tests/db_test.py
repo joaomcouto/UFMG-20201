@@ -2,7 +2,7 @@ import pytest, unittest, json
 from modules.db import userModel
 from init_flask import app
 
-def test_password_hash():
+def test_db_userModel():
     nome = "test user"
     email = "test@email.com"
     telefone = "912345678"
