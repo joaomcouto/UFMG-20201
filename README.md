@@ -1,2 +1,1 @@
-# UFMG-20202
-Code written for classroom assignments: Dec-2020 -> Apr-2021 (Coronavirus lockdown period II)
+Code written for classroom assignments: Feb-2020 -> Nov-2020 (lockdown period I)
