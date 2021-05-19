@@ -1,0 +1,47 @@
+.show-service-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-service-container .avatar {
+    margin: 8vh;
+    width: 100px;
+    height: 100px;
+    background-color: #8fd5ff;
+    border: 1px solid lightgray;
+}
+
+.show-service-container .show-service-card {
+    width: 90vw;
+    margin-bottom: 2vh;
+}
+
+.show-service-container .show-service-card h4 {
+    margin: 2vh 5vw;
+}
+
+.show-service-container .show-service-card p {
+    display: flex;
+    align-items: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 0px;
+    margin-bottom: 2vh;
+    font-size: 80%;
+}
+
+.show-service-container .divider {
+    margin-bottom: 2vh;
+}
+
+.show-service-container .contratar-button {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+
+.show-service-container .back-button {
+    margin-top: 5vh;
+    margin-bottom: 12vh;
+}

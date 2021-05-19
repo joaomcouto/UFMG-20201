@@ -1,0 +1,9 @@
+.service-card {
+    width: 90vw;
+    margin-bottom: 10px;
+}
+
+.service-card .subheader {
+    display: flex;
+    align-items: center;
+}

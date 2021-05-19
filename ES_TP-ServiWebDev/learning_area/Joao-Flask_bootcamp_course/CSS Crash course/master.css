@@ -1,0 +1,92 @@
+h1{
+  color:blue;
+}
+
+li{
+  color: rgba(30,100,100,0.5);
+}
+
+p{
+  color: #ffbb00;
+}
+
+body{
+  /*background: gray;*/
+  background: url(https://images.unsplash.com/photo-1520741412100-24cd6c2832e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4348fc639aed74754c68db44972844f&auto=format&fit=crop&w=1500&q=80);
+  background-repeat:no-repeat;
+}
+
+div{
+  background: blue;
+  border: orange;
+  border-width: thick; /* 10 px */
+  border-style: dotted;
+
+  }
+
+p{
+  color: black;
+}
+span{
+  background: red;
+  color: black;
+}
+
+
+/* <!--  Parte 2: usando divs com classes --> */
+
+
+.firstDiv{
+  color: blue;
+}
+
+.secondDiv{
+  background-color: gray;
+}
+
+/* Use an id to single out html elements*/
+
+/* id selectors use a hashtag # */
+#singledout{
+  color: red;
+  text-decoration: underline;
+}
+
+
+
+/* Parte 5: fonts, positioning, etc */
+
+h1{
+  font-family:'Bungee Shade';
+  /*font-family: cursive;*/
+}
+
+p{
+
+  font-family: monospace;
+}
+
+body{
+  font-size: 20px;
+}
+
+p{
+  font-size: 10px;
+}
+
+#two{
+  font-size: 1.0em;
+}
+
+
+/*Font Properties*/
+
+p{
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*Text Properties*/
+h1{
+  text-align: center;
+}
